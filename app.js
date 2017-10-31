@@ -71,6 +71,6 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-app.listen(process.env.PORT,process.env.IP, function(){
+app.listen(3000 ||process.env.PORT,process.env.IP, function(){
     console.log("Shoping cart is online");
 });
