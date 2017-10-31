@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+    <dic class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>User profie</h1>
+            <hr>
+            <h2>My order</h2>
+            <ul class="list-group">
+                  <% orders.forEach(function(order){ %>
+                          <% for (var orders in order.cart.items){ %>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <%= order.cart.items[orders].item.title %>
+                            <span style="color : grey;" class="badge badge-default badge-pill"><%= order.cart.items[orders].qty %></span>
+                          </li>
+                         <% } %>
+                  <% }) %>
+            </ul>
+        </div>
+    </dic>
+<% include ../partials/footer %>

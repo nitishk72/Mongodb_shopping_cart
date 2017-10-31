@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1>Login</h1>
+            <% if(hasError){ %>
+                <div class="alert alert-danger">
+                    <% message.forEach(function(message){ %> 
+                        <p><%= message %></p>
+                    <% }) %>
+                       
+                </div>
+            <% } %>
+            <form action="/user/signin" method="post">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="email" id="email" class="form-control" type="email" placeholder="jhon@doe.com"></input>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input name="password" id="password" class="form-control" type="password" placeholder="that's a secret"></input>
+                </div>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>"></input>
+                <button class="btn-btn-primery" type="submit">Login</button>
+            </form>
+            <small><a href="/user/signup">Don't have an accouunt signup</a></small>
+        </div>
+    </div>
+<% include ../partials/footer %>

@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+    <div class="container">
+      <% for(var i=0;i<product.length;i++){ %>
+        <div class="row">
+          <% for(var j=0;j<product[i].length;j++){ %>
+              <div class="col">
+              <img src="<%=product[i][j].imagePath%>" alt="<%=product[i][j].title%>" class="img-thumbnail">
+              <div class="center">
+                <h3>Buy <%= product[i][j].title %></h3>
+              </div>
+              <p class="description">
+                 <%= product[i][j].description %>
+              </p>
+              <div>
+                <div class="price pull-left"><%= product[i][j].price %>$</div>
+                <a class="pull-right" href="/add-to-cart/<%=  product[i][j]._id %>"><button type="button" class="btn btn-secondary">Add to cart</button></a>
+              </div>
+            </div>
+            <% } %>
+          </div>
+      <% } %>
+    </div>
+<% include ../partials/footer %>

@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-6">
+            <h3><strong>Total : $ <%= total %></strong></h3>
+          <form action="/checkout" method="post">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Enter name">
+              <small class="form-text text-muted">We'll never share your details</small>
+            </div>
+            <div class="form-group">
+              <label for="mobileNo">Enter Mobile no</label>
+              <input type="text" name="mobileNo" class="form-control" id="mobileNo" placeholder="9876-543-210">
+              <small class="form-text text-muted">We'll never share your details</small>
+            </div>
+            <div class="form-group">
+              <label for="address">Enter dilevery Address</label>
+              <input type="text" name="address" class="form-control" id="address" placeholder="Enter dilevery address">
+              <small class="form-text text-muted">We'll never share your details</small>
+            </div>
+            <!--<div class="form-group">-->
+            <!--  <label for="cardNo">Credit/Debit Card Number</label>-->
+            <!--  <input type="Number" class="form-control" id="cardNo" placeholder="6546-5466-4565-5654-6465">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--  <label for="validupto" class="sr-only">Valid Upto</label>-->
+            <!--  <input type="text" class="form-control" id="validupto" value="mm-yyyy">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--  <label for="cvv" class="sr-only">CVV</label>-->
+            <!--  <input type="password" class="form-control" id="cvv" placeholder="cvv">-->
+            <!--</div>-->
+            
+            <button type="submit" class="btn btn-success">Checkout</button>
+          </form>
+        </div>
+      </div>
+    </div>
+<% include ../partials/footer %>
